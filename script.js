@@ -27,6 +27,7 @@ class ProductProperties {
     static applyDiscount(products, discount){
         for(let product of products){
             let discountedPrice = (product.price - (product.price * discount))
+            discountedPrice = Math.round(discountedPrice * 100) / 100
             product.price = discountedPrice
 
         }
@@ -129,7 +130,8 @@ class StoreClassProperites {
     // Finds a product by its name and returns it, or returns null if not found
     findProductByName(name){
         let product = this.inventory.find((product) => product.name === name)
-        if(product.length != 0){
+        console.log(product)
+        if(typeof product !== "undefined"){
             console.log("Found product: " + product.name)
             return product
         }else{
@@ -198,3 +200,172 @@ console.log(`\n`)
 // Find and print the details of a specific product by its name.
 let specificProduct = store.findProductByName("Chicken")
 specificProduct.toString()
+
+
+
+
+// JS for HTML
+
+// Product details
+const nameInput = document.getElementById("name")
+const priceInput = document.getElementById("price")
+const quantityInput = document.getElementById("quantity")
+const expiryInput = document.getElementById("expiry")
+
+// Discount input
+const discountInput = document.getElementById("discount")
+
+// Search Input
+const searchInput = document.getElementById("searchName")
+
+// Display
+const displayDiv = document.getElementById("display")
+const valueDisplay = document.getElementById("valueDisplay")
+
+// Buttons
+const createBtn = document.getElementById("createClass")
+const discountBtn = document.getElementById("applyDiscount")
+const findBtn = document.getElementById("find")
+const getValueBtn = document.getElementById("getValue")
+const displayAllBtn = document.getElementById("displayAll")
+
+// Create store
+
+let userStore = new StoreClassProperites()
+
+
+// Validation
+
+function isNumber(str){
+    console.log(isNaN(str.trim()))
+    if (isNaN(str)) {
+        return false;
+      }
+      return true;
+}
+
+function notEmpty(){
+    if(
+        nameInput.value.trim() != "" &&
+        priceInput.value.trim() != "" &&
+        quantityInput.value.trim() != ""  
+    ){
+        console.log("not Empty")
+        return true
+    }else{
+        console.log("empty")
+        return false
+    }
+}
+
+function validateNum(){
+    if(
+        isNumber(priceInput.value) &&
+        isNumber(quantityInput.value)
+    ){
+        return true
+    }else{
+        return false
+    }
+}
+
+
+function validateForm(){
+    if(
+        notEmpty() &&
+        expiryInput.value.trim() != "" &&
+        validateNum()
+    ){
+        pushPerishableProductProperties() 
+        displayDiv.textContent = JSON.stringify(userStore.inventory)
+    }else if(
+        notEmpty() &&
+        validateNum()
+    ){
+        pushProducProperties()
+        displayDiv.textContent = JSON.stringify(userStore.inventory)
+    }else{
+        alert("Please fill in required fields with correct value types")
+    }
+}
+
+function pushPerishableProductProperties(){
+    let product = new PerishableProductProperties(
+        nameInput.value,
+        parseInt(priceInput.value),
+        parseInt(quantityInput.value),
+        expiryInput.value
+    )
+    userStore.addProduct(product)
+}
+
+function pushProducProperties(){
+    let product = new ProductProperties(
+        nameInput.value,
+        parseInt(priceInput.value),
+        parseInt(quantityInput.value)
+    )
+    userStore.addProduct(product)
+}
+
+createBtn.addEventListener("click", function(e){
+    e.preventDefault()
+    validateForm()
+})
+
+function noInventory(){
+    if(userStore.inventory.length != 0){
+        return false
+    }else{
+        return true
+    }
+}
+
+
+function discountProducts(){
+    if(discountInput.value.trim() != "" && 
+        isNumber(discountInput.value) &&
+        noInventory() != true
+    ){
+        let discount = parseInt(discountInput.value.trim()) / 100
+        for(let product of userStore.inventory){
+            ProductProperties.applyDiscount(userStore.inventory, discount)
+            displayDiv.textContent = JSON.stringify(userStore.inventory)
+        }
+    }else if(noInventory()){
+        alert("Add products")
+    }
+    else{
+        alert("Please fill in required fields with correct value types")
+    }
+}
+
+discountBtn.addEventListener("click", function(){
+    discountProducts()
+})
+
+findBtn.addEventListener("click", function(){
+    if(noInventory()){
+        alert("Add products")
+    }else if (searchInput.value.trim() != ""){
+        let product = userStore.findProductByName(searchInput.value.trim())
+        console.log(product)
+        if(product ){  
+            displayDiv.textContent = JSON.stringify(product)
+        }else{
+            alert("Not found")
+        }
+
+    }else{
+        alert("Please insert field")
+    }
+})
+
+getValueBtn.addEventListener("click", function(){
+    let value = userStore.getInventoryValue()
+    valueDisplay.innerHTML = value
+})
+
+displayAllBtn.addEventListener("click", function(){
+    displayDiv.textContent = JSON.stringify(userStore.inventory)
+})

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 11</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <form class="section">
+        <h1>Create product</h1>
+        <div class="content">
+            <div class="inputLabels">
+                <label for="name">Name</label>
+                <label for="price">Price</label>
+                <label for="quantity">Quantity</label>
+                <label for="Expiry">Experation Date</label>
+                
+            </div>
+            <div class="productInputs">
+                <input id="name" type="text" name="name">
+                <input id="price" type="text" name="price">
+                <input id="quantity" type="text" name="quantity">
+                <input id="expiry" type="text" name="Expiry" placeholder="Optional">
+            </div>
+
+        </div>
+      
+        <button id="createClass">Create</button>
+    </form>
+
+    <div class="section">
+        <h1>Apply discount</h1>
+  
+            <label for="discount">Discount Percentage</label>
+            <input id="discount" type="text" name="discount">
+
+        <button id="applyDiscount">Apply</button>
+    </div>
+
+    <div class="section">
+        <h1>Find product by name</h1>
+        <div>
+            <label for="find">Name</label>
+            <input id="searchName" type="text" name="find">
+        </div>
+        <button id="find">Find</button>
+    </div>
+
+    <div class="section value">
+        <h1>Get inventory value</h1>
+        <div id="valueDisplay"></div>
+        <button id="getValue">Get Value</button>
+    </div>
+
+    <div class="container">
+        <div id="display">
+    
+        </div>
+        <button id="displayAll">Display All</button>
+    </div>
+    
+</body>
+</html>
