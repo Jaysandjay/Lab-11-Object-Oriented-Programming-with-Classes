@@ -138,3 +138,12 @@ class StoreClassProperites {
 
 // Create store instance
 let inventory = new StoreClassProperites()
+
+// Store products in inventory
+inventory.addProduct(product)
+inventory.addProduct(perishableProduct1)
+inventory.addProduct(perishableProduct2)
+
+console.log("Store products")
+console.log(inventory.inventory)
+console.log(`\n`)
