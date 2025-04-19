@@ -22,4 +22,9 @@ class ProductProperties {
         console.log(string)
         return string
     }
+
 }
+
+// create new ProductProperties with arguments to pass for the neme, price, and quantity
+let product = new ProductProperties("Apple", 3, 10)
+
