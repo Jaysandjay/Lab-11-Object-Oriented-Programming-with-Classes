@@ -166,3 +166,19 @@ let product5 = new PerishableProductProperties("Beef", 15.00, 9, "2025-08-12")
 
 // Add these products to a Store object.
 let store = new StoreClassProperites()
+
+// Create array of products
+let myProducts = [product1, product2, product3, product4, product5]
+
+// Add products to store
+console.log("Add products to store")
+for(const product of myProducts){
+    store.addProduct(product)
+}
+
+console.log(store.inventory)
+console.log(`\n`)
+
+// Print the total inventory value before and after applying a 15% discount.
+console.log("Total value Before discount")
+store.getInventoryValue()
