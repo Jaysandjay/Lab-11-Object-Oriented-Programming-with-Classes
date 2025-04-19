@@ -95,3 +95,6 @@ console.log(`\n`)
 console.log("Part 3: Static Methods and Properties")
 console.log(`\n`)
 // Add a Static Method to the Product Class Method (SEE ABOVE FOR ADDED CONTENT)
+// Call static method
+ProductProperties.applyDiscount([perishableProduct1, perishableProduct2], 0.10)
+
