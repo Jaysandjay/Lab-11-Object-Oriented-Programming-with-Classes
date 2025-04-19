@@ -107,4 +107,8 @@ class StoreClassProperites {
     constructor(){
         this.inventory = []
     }
+
+    addProduct(product){
+        this.inventory.push(product)
+    }
 }
