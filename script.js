@@ -127,10 +127,10 @@ class StoreClassProperites {
     }
 
     // Finds a product by its name and returns it, or returns null if not found
-    findProductBtName(name){
-        let product = this.inventory.filter((product) => product.name === name)
-        if(product){
-            console.log("Found product: " + product.toString())
+    findProductByName(name){
+        let product = this.inventory.find((product) => product.name === name)
+        if(product.length != 0){
+            console.log("Found product: " + product.name)
             return product
         }else{
             console.log("Not found")
@@ -194,3 +194,7 @@ ProductProperties.applyDiscount(myProducts, 0.15)
 console.log("Total value after discount")
 store.getInventoryValue()
 console.log(`\n`)
+
+// Find and print the details of a specific product by its name.
+let specificProduct = store.findProductByName("Chicken")
+specificProduct.toString()
