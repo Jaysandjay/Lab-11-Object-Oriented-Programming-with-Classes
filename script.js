@@ -60,3 +60,8 @@ class PerishableProductProperties extends ProductProperties {
         return string
     }
 }
+
+// Create at least two instances of this class with sample data
+// Pass arguments to class
+let perishableProduct1 = new PerishableProductProperties("Milk", 1.5, 5, "2025-06-20" )
+let perishableProduct2 = new PerishableProductProperties("Asparagus", 4.00, 2, "2025-12-05" )
