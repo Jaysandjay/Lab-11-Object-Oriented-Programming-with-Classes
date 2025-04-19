@@ -15,4 +15,11 @@ class ProductProperties {
         console.log(this.price * this.quantity)
         return this.price * this.quantity
     }
+
+    // Method  Returns a string representation of the product (e.g., "Product: Apple, Price: $2.50, Quantity: 50")
+    toString(){
+        let string = `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}`
+        console.log(string)
+        return string
+    }
 }
