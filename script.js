@@ -53,5 +53,10 @@ class PerishableProductProperties extends ProductProperties {
         this.experationDate = experationDate
     }
 
-
+    // Override toString() Adds the expiration date to the string representation
+    toString(){
+        let string = `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}, Experation Date: ${this.experationDate}`
+        console.log(string)
+        return string
+    }
 }
