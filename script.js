@@ -10,4 +10,9 @@ class ProductProperties {
         this.quantity = quantity
     }
 
+    // Method  Returns the total value of the product in stock (price * quantity)
+    getTotalValue(){
+        console.log(this.price * this.quantity)
+        return this.price * this.quantity
+    }
 }
