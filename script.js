@@ -122,4 +122,16 @@ class StoreClassProperites {
         console.log("The total value of the inventory is: $" + total)
         return total
     }
+
+    // Finds a product by its name and returns it, or returns null if not found
+    findProductBtName(name){
+        let product = this.inventory.filter((product) => product.name === name)
+        if(product){
+            console.log("Found product: " + product.toString())
+            return product
+        }else{
+            console.log("Not found")
+            return null
+        }
+    }
 }
