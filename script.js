@@ -23,6 +23,7 @@ class ProductProperties {
         return string
     }
 
+
 }
 
 // create new ProductProperties with arguments to pass for the neme, price, and quantity
@@ -31,3 +32,9 @@ let product = new ProductProperties("Apple", 3, 10)
 // Call to string
 console.log("toString()")
 product.toString()
+
+// Call get total value
+console.log("getTotalValue()")
+product.getTotalValue()
+
+console.log(`\n`)
