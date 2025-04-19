@@ -23,7 +23,16 @@ class ProductProperties {
         return string
     }
 
-
+    // PART 3 Add a Static Method to the Product Class Method
+    static applyDiscount(products, discount){
+        for(let product of products){
+            let discountedPrice = (product.price - (product.price * discount))
+            product.price = discountedPrice
+            console.log("Product with discounted price:")
+            product.toString()
+            console.log(`\n`)
+        }
+    }
 }
 
 // create new ProductProperties with arguments to pass for the neme, price, and quantity
@@ -65,3 +74,24 @@ class PerishableProductProperties extends ProductProperties {
 // Pass arguments to class
 let perishableProduct1 = new PerishableProductProperties("Milk", 1.5, 5, "2025-06-20" )
 let perishableProduct2 = new PerishableProductProperties("Asparagus", 4.00, 2, "2025-12-05" )
+
+console.log("Instance 1 of perishable Product class")
+console.log("toString()")
+perishableProduct1.toString()
+console.log("Total Value")
+perishableProduct1.getTotalValue()
+console.log(`\n`)
+
+console.log("Instance 2 of perishable Product class")
+console.log("toString()")
+perishableProduct2.toString()
+console.log("Total Value")
+perishableProduct2.getTotalValue()
+console.log(`\n`)
+
+
+
+// Part 3: Static Methods and Properties
+console.log("Part 3: Static Methods and Properties")
+console.log(`\n`)
+// Add a Static Method to the Product Class Method (SEE ABOVE FOR ADDED CONTENT)
