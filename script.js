@@ -163,3 +163,6 @@ let product2 = new ProductProperties("Watermelon", 8.00, 5)
 let product3 = new ProductProperties("Cheese", 6.00, 30)
 let product4 = new PerishableProductProperties("Chicken", 12.00, 15, "2025-05-01")
 let product5 = new PerishableProductProperties("Beef", 15.00, 9, "2025-08-12")
+
+// Add these products to a Store object.
+let store = new StoreClassProperites()
