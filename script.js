@@ -98,3 +98,13 @@ console.log(`\n`)
 // Call static method
 ProductProperties.applyDiscount([perishableProduct1, perishableProduct2], 0.10)
 
+
+// Part 4: Store Management
+console.log("// Part 4: Store Management")
+
+class StoreClassProperites {
+    // constructor Method
+    constructor(){
+        this.inventory = []
+    }
+}
