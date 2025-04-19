@@ -38,3 +38,20 @@ console.log("getTotalValue()")
 product.getTotalValue()
 
 console.log(`\n`)
+
+
+// Part 2: Adding Inheritance
+console.log("Part 2: Adding Inheritance")
+
+// Create a Subclass: PerishableProductProperties:
+class PerishableProductProperties extends ProductProperties {
+    // Constructor method
+    constructor( name, price, quantity, experationDate){
+        // call constructor of superclass
+        super(name, price, quantity),
+        // define new variable
+        this.experationDate = experationDate
+    }
+
+
+}
