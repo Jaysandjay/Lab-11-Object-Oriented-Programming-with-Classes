@@ -119,6 +119,7 @@ class StoreClassProperites {
         for(const product of this.inventory){
             total += product.price
         }
+        total = Math.round(total * 100) / 100
         console.log("The total value of the inventory is: $" + total)
         return total
     }
@@ -147,3 +148,7 @@ inventory.addProduct(perishableProduct2)
 console.log("Store products")
 console.log(inventory.inventory)
 console.log(`\n`)
+
+// Get total Value
+console.log("Get total value of all products")
+inventory.getInventoryValue()
