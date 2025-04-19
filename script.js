@@ -108,7 +108,18 @@ class StoreClassProperites {
         this.inventory = []
     }
 
+    // Adds a product to the inventory
     addProduct(product){
         this.inventory.push(product)
+    }
+
+    // Returns the total value of all products in the inventory
+    getInventoryValue(){
+        let total = 0
+        for(const product of this.inventory){
+            total += product.price
+        }
+        console.log("The total value of the inventory is: $" + total)
+        return total
     }
 }
