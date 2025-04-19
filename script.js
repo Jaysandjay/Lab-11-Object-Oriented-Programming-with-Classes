@@ -28,9 +28,7 @@ class ProductProperties {
         for(let product of products){
             let discountedPrice = (product.price - (product.price * discount))
             product.price = discountedPrice
-            console.log("Product with discounted price:")
-            product.toString()
-            console.log(`\n`)
+
         }
     }
 }
@@ -97,6 +95,10 @@ console.log(`\n`)
 // Add a Static Method to the Product Class Method (SEE ABOVE FOR ADDED CONTENT)
 // Call static method
 ProductProperties.applyDiscount([perishableProduct1, perishableProduct2], 0.10)
+console.log("Product with discounted price:")
+perishableProduct1.toString()
+perishableProduct2.toString()
+console.log(`\n`)
 
 
 // Part 4: Store Management
@@ -179,6 +181,16 @@ for(const product of myProducts){
 console.log(store.inventory)
 console.log(`\n`)
 
-// Print the total inventory value before and after applying a 15% discount.
+// Print the total inventory value before applying a 15% discount
 console.log("Total value Before discount")
 store.getInventoryValue()
+console.log(`\n`)
+
+// // Print the total inventory value after applying a 15% discount
+// Discount items
+ProductProperties.applyDiscount(myProducts, 0.15)
+
+
+console.log("Total value after discount")
+store.getInventoryValue()
+console.log(`\n`)
