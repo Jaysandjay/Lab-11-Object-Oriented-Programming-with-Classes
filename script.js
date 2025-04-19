@@ -135,3 +135,6 @@ class StoreClassProperites {
         }
     }
 }
+
+// Create store instance
+let inventory = new StoreClassProperites()
