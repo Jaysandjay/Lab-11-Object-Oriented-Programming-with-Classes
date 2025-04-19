@@ -61,6 +61,7 @@ button{
 
 button:hover{
     cursor: pointer;
+
 }
 
 input{
@@ -79,7 +80,7 @@ label{
     border: solid 5px red;
     position: fixed;
     bottom: 10px;
-    height: 250px;
+    height: 45%;
     border-radius: 15px;
     width: 90%;
     padding: 10px;
@@ -89,6 +90,6 @@ label{
 }
 
 #display{
-    height: 220px;
+    height: 90%;
     width: 100%;
 }
