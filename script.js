@@ -152,3 +152,14 @@ console.log(`\n`)
 // Get total Value
 console.log("Get total value of all products")
 inventory.getInventoryValue()
+console.log(`\n`)
+
+
+// Part 5: Testing the System
+console.log("Part 5: Testing the System")
+// Create at least 5 products, including at least 2 PerishableProduct objects
+let product1 = new ProductProperties("Banana", 2.00, 20)
+let product2 = new ProductProperties("Watermelon", 8.00, 5)
+let product3 = new ProductProperties("Cheese", 6.00, 30)
+let product4 = new PerishableProductProperties("Chicken", 12.00, 15, "2025-05-01")
+let product5 = new PerishableProductProperties("Beef", 15.00, 9, "2025-08-12")
